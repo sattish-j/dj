@@ -5,127 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Portal | Login</title>
     <style>
+        /* General Reset */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
-            background-color: #f4f7f6;
+            background-color: #f0f2f5;
             display: flex;
+            flex-direction: column; /* Stacks logo above form */
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
 
-        /* Top Corner Logo */
-        .header-logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
+        /* Top Center Logo */
+        .logo-container {
+            margin-bottom: 30px; /* Space between logo and login box */
+            text-align: center;
         }
 
-        .header-logo img {
-            height: 60px; /* Adjust size as needed */
-            width: auto;
+        .logo-container img {
+            max-width: 180px; /* Adjust based on your logo shape */
+            height: auto;
         }
 
         /* Login Card */
-        .login-container {
+        .login-card {
             background: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
+            max-width: 380px;
         }
 
-        .login-container h2 {
+        .login-card h2 {
             text-align: center;
             margin-bottom: 25px;
-            color: #333;
+            color: #1a1a1a;
+            font-weight: 600;
         }
 
-        .form-group {
+        /* Form Styling */
+        .input-group {
             margin-bottom: 20px;
         }
 
-        .form-group label {
+        .input-group label {
             display: block;
             margin-bottom: 8px;
-            color: #666;
+            color: #555;
             font-size: 14px;
         }
 
-        .form-group input {
+        .input-group input {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 12px 15px;
+            border: 1px solid #ccd0d5;
+            border-radius: 6px;
             font-size: 16px;
+            transition: border-color 0.3s;
         }
 
-        .form-group input:focus {
+        .input-group input:focus {
             outline: none;
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+            border-color: #1877f2;
         }
 
+        /* Button Styling */
         .login-btn {
             width: 100%;
             padding: 12px;
-            background-color: #007bff;
+            background-color: #004a99; /* Professional Blue */
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
             transition: background 0.3s;
         }
 
         .login-btn:hover {
-            background-color: #0056b3;
+            background-color: #003366;
         }
 
-        .footer-links {
+        .helper-text {
+            display: block;
             text-align: center;
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 13px;
+            color: #777;
         }
 
-        .footer-links a {
-            color: #007bff;
+        .helper-text a {
+            color: #004a99;
             text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-    <div class="header-logo">
-        <img src="logo.jpg" alt="College Logo">
+    <div class="logo-container">
+        <img src="logo jpg" alt="College Logo">
     </div>
 
-    <div class="login-container">
-        <h2>Student Login</h2>
-        <form action="/submit-login" method="POST">
-            <div class="form-group">
-                <label for="username">Username / Student ID</label>
-                <input type="text" id="username" name="username" placeholder="Enter your ID" required>
+    <div class="login-card">
+        <h2>Portal Login</h2>
+        <form>
+            <div class="input-group">
+                <label for="username">Username / Email</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
             </div>
             
-            <div class="form-group">
+            <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
             </div>
 
-            <button type="submit" class="login-btn">Login</button>
+            <button type="submit" class="login-btn">Sign In</button>
         </form>
 
-        <div class="footer-links">
-            <a href="#">Forgot Password?</a> | <a href="#">Contact Support</a>
-        </div>
+        <span class="helper-text">
+            <a href="#">Forgot password?</a> | <a href="#">Need help?</a>
+        </span>
     </div>
 
 </body>
